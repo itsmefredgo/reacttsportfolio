@@ -1,7 +1,7 @@
 import '<redux>/styles/globals.css'
 import type { AppProps } from 'next/app'
-import Header from '<redux>/components/Header'
-import Footer from '<redux>/components/Footer'
+import Header from '<redux>/components/includes/Header'
+import Footer from '<redux>/components/includes/Footer'
 import Head from 'next/head'
 
 

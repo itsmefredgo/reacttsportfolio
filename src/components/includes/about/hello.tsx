@@ -1,9 +1,9 @@
-function Test() {
+function hello() {
     return (
         <div className="Test">
-            Test Page
+            hello Page
         </div>
     )
   }
   
-  export default Test;
+  export default hello;
