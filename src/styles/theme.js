@@ -8,8 +8,6 @@ export const lightTheme = {
     projectBoxBorder: "#E1E1B8", // white
 	keyWordColor: "#5CBA82", // dark green
     oppositeColor: "black",
-	
-
 };
 
 export const darkTheme = {
@@ -20,11 +18,6 @@ export const darkTheme = {
     projectBoxBorder: "#232F3E", // navy
     keyWordColor: "#E5A5FF", // light purple
     oppositeColor: "white",
-
-
-
-
-
 };
 
 export const GlobalStyle = createGlobalStyle`

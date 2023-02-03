@@ -3,7 +3,7 @@ import Hello from "../../components/includes/about/hello";
 
 function about() {
     return (
-		<div className="About">
+		<div className="about">
 			About Page
 			<Hello></Hello>
 			<Test></Test>
