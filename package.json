@@ -4,10 +4,10 @@
   "homepage": "https://itsmefredgo.github.io/fredsportfolio",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "next dev",
     "build": "next build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "next start",
     "lint": "next lint"
   },
