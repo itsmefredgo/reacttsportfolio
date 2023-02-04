@@ -1,4 +1,18 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
+
+export type MyProps = {
+    theme: typeof theme
+}
+
+export const theme = {
+	primaryBackground: "white", 
+	secondaryBackground: "#f0efef", 
+	fontColor: "black", 
+	projectBoxBackground: "#FAFAEF", 
+	projectBoxBorder: "#E1E1B8", 
+	keyWordColor: "#5CBA82", 
+	oppositeColor: "black",
+}
 
 export const lightTheme = {
     primaryBackground: "white", // light light white
@@ -20,7 +34,7 @@ export const darkTheme = {
     oppositeColor: "white",
 };
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle<MyProps>`
 	// Change all font colors
 	*{
 		transition: all 0.25s linear;
