@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
+import pageSlice from '../slices/pageSlice'
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    pageChanger: pageSlice,
+  },
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
