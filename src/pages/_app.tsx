@@ -7,6 +7,7 @@ import '<redux>/styles/header.css'
 import { useState, useEffect } from 'react'
 import { lightTheme, darkTheme, GlobalStyle } from '../styles/theme' 
 
+
 import { ThemeProvider } from "styled-components";
 
 import Header from '<redux>/components/includes/Header'
@@ -15,15 +16,16 @@ import Head from 'next/head'
 
 function App({ Component, pageProps }: AppProps) {
 
-    const [theme, setTheme] = useState("dark");
+    const getUserSetPreference = () => {return localStorage.getItem("theme");};
+    const storeUserSetPreference = (pref:any) => {localStorage.setItem("theme", pref);};
+
+    const [theme, setTheme] = useState("light");
 
     const themeToggler = () => {
         storeUserSetPreference(theme === "light" ? "dark" : "light");
         theme === "light" ? setTheme("dark") : setTheme("light");
     };
 
-    const getUserSetPreference = () => {return localStorage.getItem("theme");};
-    const storeUserSetPreference = (pref:any) => {localStorage.setItem("theme", pref);};
 
     useEffect(() => {
         const userSetPreference = getUserSetPreference();

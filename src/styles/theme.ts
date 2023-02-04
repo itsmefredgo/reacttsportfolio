@@ -4,14 +4,29 @@ export type MyProps = {
     theme: typeof theme
 }
 
-export const theme = {
-	primaryBackground: "white", 
-	secondaryBackground: "#f0efef", 
-	fontColor: "black", 
-	projectBoxBackground: "#FAFAEF", 
-	projectBoxBorder: "#E1E1B8", 
-	keyWordColor: "#5CBA82", 
-	oppositeColor: "black",
+const getUserSetPreference:any = () => {return localStorage.getItem("theme");};
+const storeUserSetPreference:any = (pref:any) => {localStorage.setItem("theme", pref);};
+
+let theme = {
+	primaryBackground: "#161b22", // dark blue
+	secondaryBackground: "#0d1117", // dark dark blue
+	fontColor: "#C0C0C0", // light gray
+	projectBoxBackground: "#1E2327", // dark grey
+	projectBoxBorder: "#232F3E", // navy
+	keyWordColor: "#E5A5FF", // light purple
+	oppositeColor: "white",
+}
+
+if (getUserSetPreference == "light"){
+	theme = {
+		primaryBackground: "white", 
+		secondaryBackground: "#f0efef", 
+		fontColor: "black", 
+		projectBoxBackground: "#FAFAEF", 
+		projectBoxBorder: "#E1E1B8", 
+		keyWordColor: "#5CBA82", 
+		oppositeColor: "black",
+	}
 }
 
 export const lightTheme = {
