@@ -9,3 +9,6 @@ Here are the technologies I am learning from the project:
 - NodeJS
 - ESLint
 - Redux
+
+## Required installs
+

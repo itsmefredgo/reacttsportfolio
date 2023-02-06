@@ -5,21 +5,28 @@ import { changeCurrentPage } from '../../assets/slices/pageSlice'
 import type { RootState } from '<redux>/assets/store/store';
 import { useTheme } from 'next-themes'
 
+import { IoLanguage, IoMoon, IoSunny } from "react-icons/io5"
+
+
 const Header = (props:any) => {
-	const page = useSelector((state: RootState) => state.pageChanger.currentPage)
+	const currentPage:string = useSelector((state: RootState) => state.pageChanger.currentPage)
 	const dispatch = useDispatch();
 
-	const pages = ['Home', 'About', 'Works', 'Blogs', 'Contact']
+	const pages:string[] = ['Home', 'About', 'Works', 'Blogs', 'Contact']
 	const { theme, setTheme } = useTheme()
+	function changeTheme(){setTheme(theme == 'light' ? 'dark' : 'light')}
+
 	return (
 		<header className='header'>
-			<div className='header-nagivator'>
+			<div className='header-navigator'>
 				{pages.map((page) => {
 					return (
 						<Link 
 							href={"/" + page.toLowerCase()} 
-							onClick={() => dispatch(changeCurrentPage(page.toLowerCase()))}
+							onClick={() => dispatch(changeCurrentPage(page.toLowerCase()))} 
 							key={page.toLowerCase()} 
+							// className="hello"
+							className={page.toLowerCase() == currentPage ? 'header-navigator-current' : 'header-navigator-other'}
 						>
 							{ page }
 						</Link>
@@ -27,13 +34,8 @@ const Header = (props:any) => {
 				})}
 			</div>
 			<div className='header-functions'>
-				{/* <button className='header-functions-darkmode' onClick={props.themeToggler}>Dark Mode</button> */}
-				<button className='header-functions-language'>Language</button>
-				<button onClick={() => setTheme('light')}>Light Mode</button>
-      <button onClick={() => setTheme('dark')}>Dark Mode</button>
-			</div>
-			<div>
-				current page is { page }
+      			<button onClick={() => changeTheme()}>{theme == 'light' ? <IoSunny/> : <IoMoon/>}</button>
+				<button className='header-functions-language'><IoLanguage/></button>
 			</div>
 		</header>
 	);

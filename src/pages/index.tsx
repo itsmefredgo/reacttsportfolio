@@ -8,9 +8,5 @@ import Home from './home/index'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function HomeDef() {
-    return (
-        <>
-            <Home></Home>
-        </>
-    )
+    return (<Home></Home>)
 }
