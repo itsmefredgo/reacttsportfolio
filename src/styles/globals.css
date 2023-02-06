@@ -2,3 +2,15 @@ body {
     margin: 0;
     padding: 0; 
 }
+
+html,
+body {
+  color: #000;
+  background: white;
+}
+
+[data-theme='dark'],
+[data-theme='dark'] body {
+  color: #fff;
+  background: black;
+}
