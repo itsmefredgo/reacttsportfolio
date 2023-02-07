@@ -34,8 +34,8 @@ const Header = (props:any) => {
 				})}
 			</div>
 			<div className='header-functions'>
-      			<button onClick={() => changeTheme()}>{theme == 'light' ? <IoSunny/> : <IoMoon/>}</button>
-				<button className='header-functions-language'><IoLanguage/></button>
+				<button onClick={() => changeTheme()}>{theme == 'light' ? <IoSunny></IoSunny> : <IoMoon></IoMoon>}</button>
+				<button className='header-functions-language' onClick={() => changeTheme()}><IoLanguage></IoLanguage></button>
 			</div>
 		</header>
 	);

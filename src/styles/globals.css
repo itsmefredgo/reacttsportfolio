@@ -1,24 +1,24 @@
 body {
-    margin: 0;
-    padding: 0; 
-    min-height: 100vh;
-}
-
-html,
-body {
-  color: #000;
-  background: white;
+	margin: 0;
+	padding: 0; 
+	min-height: 100vh;
 }
 
 
-[data-theme='dark'] body {
-  color: #fff;
-  background: #161b22;
-}
 
 
 
 
 *{
-  transition: all 0.15s linear;
+	transition: all 0.25s linear;
+	font-family: 'Poppins', sans-serif;
 }
+
+
+/* div {
+	transition: all 1s linear;
+} */
+
+/* .parent-element {
+	transition: color 1s ease;
+  } */
