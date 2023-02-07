@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import IntroductionEduEnglish from '../bilingual/home/introduction-edu-english';
 import IntroductionEduKorean from '../bilingual/home/introduction-edu-korean';
 
-function addition() {
+function Addition() {
     const currentLanguage:string = useSelector((state: RootState) => state.languageChanger.currentLanguage)
     
     return (
@@ -20,4 +20,4 @@ function addition() {
     )  
 }
 
-export default addition;
+export default Addition;

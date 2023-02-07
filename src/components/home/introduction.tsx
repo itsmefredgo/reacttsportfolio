@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import IntroductionParagraphKorean from '../bilingual/home/introduction-paragraph-korean';
 import IntroductionParagraphEnglish from '../bilingual/home/introduction-paragraph-english';
 
-function introduction() {
+function Introduction() {
     const currentLanguage:string = useSelector((state: RootState) => state.languageChanger.currentLanguage)
 
     return (
@@ -25,4 +25,4 @@ function introduction() {
     )  
 }
 
-export default introduction;
+export default Introduction;

@@ -7,9 +7,7 @@ import InftroductionContactLinkKorean from '<redux>/components/bilingual/home/in
 import { RootState } from '<redux>/assets/store/store';
 import { useSelector } from 'react-redux';
 
-import Link from 'next/link';
-
-function contact() {
+function Contact() {
     const currentLanguage:string = useSelector((state: RootState) => state.languageChanger.currentLanguage)
     return (
         <div className="main-contact">
@@ -21,4 +19,4 @@ function contact() {
     )  
 }
 
-export default contact;
+export default Contact;
