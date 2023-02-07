@@ -6,10 +6,12 @@ import type { RootState } from '<redux>/assets/store/store';
 import { useTheme } from 'next-themes'
 
 import { IoLanguage, IoMoon, IoSunny } from "react-icons/io5"
+import { changeCurrentLanguage } from '<redux>/assets/slices/languageSlice';
 
 
 const Header = (props:any) => {
 	const currentPage:string = useSelector((state: RootState) => state.pageChanger.currentPage)
+	const currentLanguage:string = useSelector((state: RootState) => state.languageChanger.currentLanguage)
 	const dispatch = useDispatch();
 
 	const pages:string[] = ['Home', 'About', 'Works', 'Blogs', 'Contact']
@@ -25,7 +27,6 @@ const Header = (props:any) => {
 							href={"/" + page.toLowerCase()} 
 							onClick={() => dispatch(changeCurrentPage(page.toLowerCase()))} 
 							key={page.toLowerCase()} 
-							// className="hello"
 							className={page.toLowerCase() == currentPage ? 'header-navigator-current' : 'header-navigator-other'}
 						>
 							{ page }
@@ -34,8 +35,18 @@ const Header = (props:any) => {
 				})}
 			</div>
 			<div className='header-functions'>
-				<button onClick={() => changeTheme()}>{theme == 'light' ? <IoSunny></IoSunny> : <IoMoon></IoMoon>}</button>
-				<button className='header-functions-language' onClick={() => changeTheme()}><IoLanguage></IoLanguage></button>
+				<button 
+					className='header-functions-page' 
+					onClick={() => changeTheme()}
+				>
+					{theme == 'light' ? <IoSunny></IoSunny> : <IoMoon></IoMoon>}
+				</button>
+				<button 
+					className='header-functions-language' 
+					onClick={() => dispatch(changeCurrentLanguage(currentLanguage == 'english' ? 'korean' : 'english'))} 
+				>
+					<IoLanguage></IoLanguage>
+				</button>
 			</div>
 		</header>
 	);

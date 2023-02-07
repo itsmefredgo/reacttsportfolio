@@ -1,5 +1,5 @@
-import Test from "../../components/includes/about/test";
-import Hello from "../../components/includes/about/hello";
+import Test from "../../components/about/test";
+import Hello from "../../components/about/hello";
 
 function about() {
     return (
