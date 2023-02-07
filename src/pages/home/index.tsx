@@ -1,11 +1,11 @@
-import photo from '*.jpeg'
+// Photos imported
 import frederick_snow_1 from '../../assets/images/home/frederick-snow-1.jpeg'
 import frederick_band_1 from '../../assets/images/home/frederick-band-1.jpeg'
 
+// Required NextJS components imported
 import Link from 'next/link';
 
 function Home() {
-
     return (
         <div className="home">
             <div className="main-introduction">
@@ -96,17 +96,17 @@ function Home() {
                 </div>
             </div>
 
-            {/* <div className="main-social">
+            <div className="main-social">
                 <a className="contact-social" href="https://www.linkedin.com/in/fred-go/" target="_blank" rel="noreferrer">
-                <img align="left" alt="Frederick's LinkedIN" width="22px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" />
+                <img alt="Frederick's LinkedIN" width="22px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/linkedin.svg" />
                 </a>
                 <a className="contact-social" href="https://github.com/itsmefredgo" target="_blank" rel="noreferrer">
-                    <img align="left" alt="Frederick's GitHub" width="22px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/github.svg" />
+                    <img alt="Frederick's GitHub" width="22px" src="https://raw.githubusercontent.com/peterthehan/peterthehan/master/assets/github.svg" />
                 </a>
                 <a className="contact-social" href="https://www.instagram.com/itsmefredgo/" target="_blank" rel="noreferrer">
-                    <img align="left" alt="Frederick's Instagram" width="22px" src="https://raw.githubusercontent.com/hussainweb/hussainweb/main/icons/instagram.png" />
+                    <img alt="Frederick's Instagram" width="22px" src="https://raw.githubusercontent.com/hussainweb/hussainweb/main/icons/instagram.png" />
                 </a>
-            </div>      */}
+            </div>     
         </div>
     )
   }
