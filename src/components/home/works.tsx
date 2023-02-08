@@ -2,6 +2,8 @@ import worksJSON from '<redux>/assets/JSONdata/projects.json'
 import TechIcon from '<redux>/components/works/techIcon'
 import Link from 'next/link';
 import { useState } from 'react';
+import { TbArrowBigRightLines, TbArrowBigLeftLines } from 'react-icons/tb'
+import { RxDotFilled } from 'react-icons/rx'
 
 function projects() {
 
@@ -21,52 +23,79 @@ function projects() {
     
     let [currentWorkIndex, setCurrentWorkIndex] = useState(0)
     const pinLength = pinnedWorks.length
-    function prevWork(){setCurrentWorkIndex(currentWorkIndex == 0 ? pinLength - 1 : currentWorkIndex - 1)}
-    function nextWork(){setCurrentWorkIndex(currentWorkIndex == pinLength - 1 ? 0 : currentWorkIndex + 1)}
+    function prevWork(){
+        leftArrowAnimate()
+        setCurrentWorkIndex(currentWorkIndex == 0 ? pinLength - 1 : currentWorkIndex - 1)
+    }
+    function nextWork(){
+        rightArrowAnimate()
+        setCurrentWorkIndex(currentWorkIndex == pinLength - 1 ? 0 : currentWorkIndex + 1)
+        
+    }
+
+    let [rightArrowClicked, setRightArrawClicked] = useState(false)
+
+    function rightArrowAnimate(){
+        setRightArrawClicked(true)
+        setTimeout(() => {
+            setRightArrawClicked(false)
+        }, 500);
+    }
+
+    let [leftArrowClicked, setLeftArrawClicked] = useState(false)
+
+    function leftArrowAnimate(){
+        setLeftArrawClicked(true)
+        setTimeout(() => {
+            setLeftArrawClicked(false)
+        }, 500);
+    }
 
     return (
         <div className="main-projects">
+            <div className="main-projects-head">Pinned Works</div>
             <div className='main-projects-slide'>
-                <div className='main-projects-slide-button' onClick={() => prevWork()}>
-                    previous
-                </div>
-                <div>
-                    <div className="main-projects-head">Pinned Works</div>
-                    <div className="main-projects-list">
-                        {/* {currentWorkIndex} */}
-                        {pinnedWorks.map(function(work, index) {
-                            if(currentWorkIndex == index){
-                                return (
-                                    <div className='project-box pb-animation-active' key={work.title} style={{height: "20vh"}}>
-                                        <h3>{work.title}</h3>
-                                        <p>{work.description}</p>
-                                        <div className='project-tech-list'>
-                                            <div>
-                                            {work.tools.map((tool) => (
-                                                <span className='techIcon' key={tool}>
-                                                    <TechIcon name={tool}></TechIcon>
-                                                </span>
-                                            ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            } else {
-                                return null
-                            }
-                        } 
-                        )}
+                <div className="main-projects-button-parent">
+                    <div className={leftArrowClicked == false ? 'main-projects-slide-button' : 'main-projects-slide-button rightclicked'} onClick={() => prevWork()}>
+                        <TbArrowBigLeftLines/>
                     </div>
                 </div>
-                <div className='main-projects-slide-button' onClick={() => nextWork()}>
-                    next
+                <div className="main-projects-list">
+                    {pinnedWorks.map(function(work, index) {
+                            return (
+                                <div className={currentWorkIndex == index ? 'project-boxs pb-animation-active' : 'project-boxs pb-animation-non'} key={work.title} style={{height: "20vh"}}>
+                                    <h3>{work.title}</h3>
+                                    <p>{work.description}</p>
+                                    <div className='project-tech-list'>
+                                        <div>
+                                        {work.tools.map((tool) => (
+                                            <span className='techIcon' key={tool}>
+                                                <TechIcon name={tool}></TechIcon>
+                                            </span>
+                                        ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        } 
+                    )}
+                </div>
+                <div className="main-projects-button-parent">
+                    <div className={rightArrowClicked == false ? 'main-projects-slide-button' : 'main-projects-slide-button leftclicked'} onClick={() => nextWork()}>
+                        <TbArrowBigRightLines/>
+                    </div>
                 </div>
             </div>
+            <div className='main-projects-numbers'>
+                {pinnedWorks.map(function(work, index){
+                    return (<RxDotFilled className={currentWorkIndex == index ? 'main-projects-list-current-dot' : ''}/>)
+                })}
+            </div>
             <div className="main-projects-link">
-                    <Link href="/works">
-                        View all works
-                    </Link>
-                </div>
+                <Link href="/works">
+                    View all works
+                </Link>
+            </div>
         </div>
     )  
 }

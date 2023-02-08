@@ -12,6 +12,7 @@ import '<redux>/styles/header.css'
 import '<redux>/styles/home.css'
 import '<redux>/styles/footer.css'
 import '<redux>/styles/works.css'
+import '<redux>/styles/home-dark.css'
 
 // Dark theme helper imported
 import { ThemeProvider } from 'next-themes'

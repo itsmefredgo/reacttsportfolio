@@ -1,0 +1,32 @@
+/* HOME */
+html, body {background: white;}
+[data-theme='dark'] body {background: #161b22;}
+
+.main-introduction-photo-bg{background-color: #f0efef; }
+[data-theme='dark'] .main-introduction-photo-bg{background-color: #0d1117;}
+
+.main-introduction-paragraph > *{color: black;}
+[data-theme='dark'] .main-introduction-paragraph > *{color: white;}
+
+div{color: black;}
+[data-theme='dark'] div{color: white;}
+
+.main-introduction-addition, .main-projects{background-color: #f0efef;}
+[data-theme='dark'] .main-introduction-addition, [data-theme='dark'] .main-projects{background-color: #0d1117;}
+
+a {color: black;}
+[data-theme='dark'] a {color: white;}
+
+.project-boxs{
+    background-color: #FAFAEF;
+    border: 1px solid #E1E1B8;
+}
+[data-theme='dark'] .project-boxs{
+    background-color: #1E2327;
+    border: 1px solid #232F3E;
+}
+.contact-social {background-color: #E5A5FF;}
+[data-theme='dark'] .contact-social{background-color: #5CBA82;}
+
+.main-projects-list-current-dot{color: #E5A5FF;}
+[data-theme='dark'] .main-projects-list-current-dot{color: #5CBA82;}
