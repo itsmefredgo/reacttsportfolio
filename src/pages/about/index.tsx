@@ -3,7 +3,7 @@ import Hello from "../../components/about/hello";
 import { useDispatch } from "react-redux";
 import { changeCurrentPage } from '../../assets/slices/pageSlice'
 
-function about() {
+function About() {
 	const dispatch = useDispatch()
 	dispatch(changeCurrentPage('about'))
 
@@ -16,4 +16,4 @@ function about() {
   	)
 }
 
-export default about;
+export default About;

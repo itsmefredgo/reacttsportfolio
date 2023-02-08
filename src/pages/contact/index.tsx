@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { changeCurrentPage } from '../../assets/slices/pageSlice'
 
-function about() {
+function Contact() {
 	const dispatch = useDispatch()
 	dispatch(changeCurrentPage('contact'))
 
@@ -12,4 +12,4 @@ function about() {
   	)
 }
 
-export default about;
+export default Contact;
