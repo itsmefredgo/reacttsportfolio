@@ -67,7 +67,7 @@ div{
     color: white;
 }
 
-.main-introduction-addition{
+.main-introduction-addition, .main-projects{
     height: 70vh;
     padding-left: 15vw;
     padding-top: 17.5em;
@@ -76,7 +76,7 @@ div{
     padding-bottom: 5em;
     background-color: #f0efef;
 }
-[data-theme='dark'] .main-introduction-addition{
+[data-theme='dark'] .main-introduction-addition, [data-theme='dark'] .main-projects{
     background-color: #0d1117;
 }
 
@@ -114,12 +114,10 @@ a {
 .main-projects{
     height: 70vh;
     padding-top: 20vh;
-    /* border: red solid 1px; */
-    margin-left: 3vw;
-    margin-right: 3vw;
-}
-.main-projects-slide > *{
-    /* border: red solid 1px; */
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    flex-direction: column;
 }
 .main-projects-slide{
     width: 100%;
@@ -140,16 +138,14 @@ a {
     margin-bottom: 5vh;
 }
 .main-projects-list{
-    border: blue solid 1px;
+    width: 40vw;
     padding-bottom: 3em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 70vw;
-    /* margin-left: 10vw; */
-    grid-gap: 1em;
+    height: 20vh;
 }
+
+
+
 .main-projects-list-item{
-    border: red solid 1px;
     padding: 1em;
 }
 .main-projects-link{
@@ -182,6 +178,29 @@ a {
     border-radius: 1em;
 }
 
+/* .pb-animation-non{
+    position: absolute;
+    opacity: 0;
+} */
+.pb-animation-active{
+    animation-duration: 2s;
+    animation-name: slidein;
+    /* animation-iteration-count:; */
+    /* animation-direction: alternate; */
+}
+
+@keyframes slidein {
+    from {
+      margin-left: 200%;
+      width: 100%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+}
+
 .main-social {
     padding-top: 5vh;
     padding-bottom: 10vh;
@@ -194,7 +213,7 @@ a {
     flex-wrap: wrap;
 }
 .contact-social{
-    padding: 1em;
+    padding: 1em; 
     border-radius: 1em;
 }
 .contact-social{
@@ -203,7 +222,7 @@ a {
 [dark-theme='dark'] {
     background-color: #5CBA82;
 }
-Image {
+.contact-social-img {
     float: left;
     vertical-align: top;
     width: 22px;

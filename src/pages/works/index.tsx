@@ -23,8 +23,8 @@ function Works() {
     }
 
     worksJSON.sort((a, b) => {
-        let dateA = a.date ? new Date(a.date) : new Date();
-        let dateB = b.date ? new Date(b.date) : new Date();
+        let dateA:Date = a.date ? new Date(a.date) : new Date();
+        let dateB:Date = b.date ? new Date(b.date) : new Date();
         return dateB.getTime() - dateA.getTime();
     });
 

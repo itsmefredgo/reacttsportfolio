@@ -112,19 +112,19 @@ const ProjectIcon: React.FC<TechIconName> = (props) => {
             return(<span><img src="https://img.shields.io/badge/C%23-239120?style=plastic&logo=C-Sharp&logoColor=white"/></span>)
             break
         case "TYPESCRIPT":
-            return(<span><img src="https://img.shields.io/badge/typescript%23-3178C6?style=plastic&logo=C-Sharp&logoColor=white"/></span>)
+            return(<span><img src="https://img.shields.io/badge/typescript-3178C6?style=plastic&logo=typescript&logoColor=white"/></span>)
             break
         case "POSTMAN":
-            return(<span><img src="https://img.shields.io/badge/Postman%23-FF6C37?style=plastic&logo=C-Sharp&logoColor=white"/></span>)
+            return(<span><img src="https://img.shields.io/badge/Postman-FF6C37?style=plastic&logo=postman&logoColor=white"/></span>)
             break
         case "SPRING":
-            return(<span><img src="https://img.shields.io/badge/spring%23-6DB33F?style=plastic&logo=C-Sharp&logoColor=white"/></span>)
+            return(<span><img src="https://img.shields.io/badge/spring-6DB33F?style=plastic&logo=spring&logoColor=white"/></span>)
             break
         case "REDUX":
-            return(<span><img src="https://img.shields.io/badge/redux%23-764ABC?style=plastic&logo=C-Sharp&logoColor=white"/></span>)
+            return(<span><img src="https://img.shields.io/badge/redux-764ABC?style=plastic&logo=redux&logoColor=white"/></span>)
             break
         case "ESLINT":
-            return(<span><img src="https://img.shields.io/badge/eslint%23-4B32C3?style=plastic&logo=C-Sharp&logoColor=white"/></span>)
+            return(<span><img src="https://img.shields.io/badge/eslint-4B32C3?style=plastic&logo=eslint&logoColor=white"/></span>)
             break
         default:
             url = "https://img.shields.io/badge/" + props.name + "-" + randomColor + "?style=plastic"
