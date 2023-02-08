@@ -60,6 +60,12 @@ body {
 [data-theme='dark'] .main-introduction-paragraph > *{
     color: white;
 }
+div{
+    color: black;
+}
+[data-theme='dark'] div{
+    color: white;
+}
 
 .main-introduction-addition{
     height: 70vh;

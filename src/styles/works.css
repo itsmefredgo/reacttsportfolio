@@ -1,0 +1,104 @@
+.project {
+    min-height: 87vh;
+    width: 60vw;
+    margin-left: 20vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+.first-project {
+    margin-top: 5vh;
+}
+.project > h1 {
+    text-decoration: underline;
+    margin-bottom: 1rem;
+}
+.project-list {
+    margin-bottom: 5vh;
+    border-bottom: double black;
+}
+.project-list > h3, p{
+    margin-right: 1rem;
+}
+
+.project-container{
+    margin-bottom: 2rem;
+}
+
+.project-container-header{
+    margin-left: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+.project-box{
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #FAFAEF;
+    border: 1px solid #E1E1B8;
+}
+[data-theme='dark'] .project-box{
+    background-color: #1E2327;
+    border: 1px solid #232F3E;
+}
+.project-boxes{
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    grid-gap: 1rem;
+}
+.project-title{
+    color: #66a5d4;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.project-tech-list{
+    margin-top: 0.5rem;
+}
+.synchrotron-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.synchrotron-images > img {
+    width: 25vw;
+}
+.synchrotron-image {
+    border: #c4b7a6 solid 0.5rem;
+    border-radius: 1rem;
+}
+
+.detailed-timeline-box {
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+}
+.detailed-timeline-link {
+    text-decoration: none;
+    margin-left: 2vw;
+    padding: 1rem 1rem;
+    border: 0.25rem dotted navy;
+    border-radius: 2rem;
+}
+.detailed-timeline-heading {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+}
+.detailed-timeline-heading-2 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 3rem;
+}
+.back-to-life-link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: white;
+    background-color: #92a8d1;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    margin-left: 3.5rem;
+}
+.techIcon {
+    margin-right: 0.25em;
+}
