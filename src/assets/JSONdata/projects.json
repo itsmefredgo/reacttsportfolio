@@ -108,7 +108,7 @@
         "title": "Haskell Project",
         "description": "This will be an academic project to learn the fundamentals of programming languages especially functional languages with Haskell. ", 
         "category": "Other",
-        "technology": ["HASKELL"],
+        "tools": ["HASKELL"],
         "status": "past",
         "pinned": false,
         "date": "0000-00-00"

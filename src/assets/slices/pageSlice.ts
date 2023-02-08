@@ -6,7 +6,7 @@ export interface CurrentPages {
 }
 
 const initialState: CurrentPages = {
-  currentPage: "home"
+  currentPage: ""
 }
 
 export const pageSlice = createSlice({

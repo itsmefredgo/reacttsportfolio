@@ -1,10 +1,11 @@
 import worksJSON from '<redux>/assets/JSONdata/projects.json'
-import { forEachChild } from 'typescript';
 import TechIcon from '<redux>/components/works/techIcon'
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from '<redux>/assets/store/store';
+import { changeViewWorksOrder } from '<redux>/assets/slices/viewWorksOrderSlice';
+import { changeCurrentPage } from '../../assets/slices/pageSlice'
 
 function Works() {
-
-    
 
     interface TechIconName {
         name: string;
@@ -28,9 +29,14 @@ function Works() {
     });
 
     let statusTitle = <></>
+    let categoryTitle = <></>
 
-    const workStatus:string[] = ["current", "past", "future"]
+    const workStatus:string[] = ["past", "current", "future"]
+    const workCategory:string[] = ["Web Dev", "Data Science", "Other"]
     const sortby:string[] = ["status", "category"]
+
+    const currentViewOrder:string = useSelector((state: RootState) => state.viewWorkOrderChanger.currentOrder)
+    const dispatch = useDispatch();
 
     let pinnedWorks:Work[] = []
     let allWorks:Work[] = []
@@ -42,30 +48,8 @@ function Works() {
         allWorks.push(value as Work)
     }); 
 
-    function toolLists(list:string[]){
-        // if (list.length == 0){
-        //     return (<></>)
-        // }
-        console.log(list)
+	dispatch(changeCurrentPage('works'))
 
-        if (list != undefined){
-            for (let i = 0; i < list.length; i++) {
-                list[i]
-            }
-        }
-
-        // if (list == undefined){
-        //     return (<>WAKINRTF</>)
-        // } else {
-        //     return (<>
-        //         {list.forEach((tool) => {
-        //             <>sadadasfdasf</>
-        //         })}
-        //     </>)
-        // }
-        
-    }
-    
     return (
         <div className="works">
             <div className="project">
@@ -92,8 +76,14 @@ function Works() {
                     </div>
                 </div>
 
+                <h2>Currently viewing works by {currentViewOrder}</h2>
+                <button onClick={currentViewOrder == 'status' ? () => dispatch(changeViewWorksOrder('category')) : () => dispatch(changeViewWorksOrder('status'))}>
+                    Change View Mode
+                </button> 
+                {/* onClick={() => dispatch(changeCurrentPage(page.toLowerCase()))}  */}
+
                 {/* CURRENT -> PAST -> FUTURE OR DATA SCIENCE -> WEBDEV -> OTHER*/}
-                {workStatus.map(function(status){
+                {currentViewOrder == "status" && workStatus.map(function(status){
                     switch(status){
                         case "current":
                             statusTitle = <h1>Current Project</h1>
@@ -110,31 +100,77 @@ function Works() {
                             <div className="project-container">
                             <div className='project-boxes'>
 
-                            {allWorks.map((work) => (
-                                <div className='project-box' key={work.title}>
-                                    <h3>{work.title}</h3>
-                                    <p>{work.description}</p>
-                                    <div className='project-tech-list'>
-                                        <div>
-                                            {/* {toolLists(work.tools)} */}
+                            {allWorks.map(function(work) {
+                                if (work.status == status){
+                                    return (
+                                        <div className='project-box' key={work.title}>
+                                            <h3>{work.title}</h3>
+                                            <p>{work.description}</p>
+                                            <div className='project-tech-list'>
+                                                <div>
+                                                    {work.tools && work.tools.map(function(tool){
+                                                        return (<span className='techIcon' key={tool}>
+                                                            <TechIcon name={tool}></TechIcon>
+                                                        </span>)
+                                                    })}
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            ))}
+                                    ) 
+                                } else {
+                                    return (<></>)
+                                }
+                            })}
                             
                             </div>
                         </div>
                     </>)
                 })}
 
+                {currentViewOrder == "category" && workCategory.map(function(category){
+                    switch(category){
+                        case "Web Dev":
+                            categoryTitle = <h1>Web Development Projects</h1>
+                            break
+                        case "Data Science":
+                            categoryTitle = <h1>Data Science Projects</h1>
+                            break
+                        case "Other":
+                            categoryTitle = <h1>Other Projects</h1>
+                            break
+                    }
+                    return (<>
+                            {categoryTitle}
+                            <div className="project-container">
+                            <div className='project-boxes'>
 
-                {/* {worksJSON.map((work) => (
-                    <div className="project-container" key={work.title}>
-                        <h1 className="project-container-header">
-                            {work.title}
-                        </h1>
-                    </div>
-                ))} */}
+                            {allWorks.map(function(work) {
+                                if (work.category == category){
+                                    return (
+                                        <div className='project-box' key={work.title}>
+                                            <h3>{work.title}</h3>
+                                            <p>{work.description}</p>
+                                            <div className='project-tech-list'>
+                                                <div>
+                                                    {work.tools && work.tools.map(function(tool){
+                                                        return (<span className='techIcon' key={tool}>
+                                                            <TechIcon name={tool}></TechIcon>
+                                                        </span>)
+                                                    })}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ) 
+                                } else {
+                                    return (<></>)
+                                }
+                            })}
+                            
+                            </div>
+                        </div>
+                    </>)
+                })}
+
             </div>
         </div>
     )

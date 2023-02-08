@@ -27,7 +27,7 @@ const Header = (props:any) => {
 							href={"/" + page.toLowerCase()} 
 							onClick={() => dispatch(changeCurrentPage(page.toLowerCase()))} 
 							key={page.toLowerCase()} 
-							className={page.toLowerCase() == currentPage ? 'header-navigator-current' : 'header-navigator-other'}
+							className={ page.toLowerCase() == currentPage ? 'header-navigator-current' : 'header-navigator-other'}
 						>
 							{ page }
 						</Link>

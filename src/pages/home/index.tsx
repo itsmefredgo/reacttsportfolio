@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { RootState } from '<redux>/assets/store/store';
+import { useDispatch } from "react-redux";
+import { changeCurrentPage } from '../../assets/slices/pageSlice'
 
 // Page molecules imported
 import Introduction from '<redux>/components/home/introduction';
@@ -12,6 +14,8 @@ import Projects from '<redux>/components/home/projects';
 
 function Home() {
     const currentLanguage:string = useSelector((state: RootState) => state.languageChanger.currentLanguage)
+    const dispatch = useDispatch()
+	dispatch(changeCurrentPage('home'))
 
     return (
         <div className="home">

@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import languageSlice from '../slices/languageSlice'
 import pageSlice from '../slices/pageSlice'
+import viewWorksOrderSlice from '../slices/viewWorksOrderSlice'
 
 export const store = configureStore({
   reducer: {
     pageChanger: pageSlice,
-    languageChanger: languageSlice
+    languageChanger: languageSlice,
+    viewWorkOrderChanger: viewWorksOrderSlice
   },
 })
 

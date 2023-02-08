@@ -1,4 +1,10 @@
+import { useDispatch } from "react-redux";
+import { changeCurrentPage } from '../../assets/slices/pageSlice'
+
 function Blogs() {
+    const dispatch = useDispatch()
+	dispatch(changeCurrentPage('blogs'))
+
     return (
         <div className="blogs">
             Blog Page
