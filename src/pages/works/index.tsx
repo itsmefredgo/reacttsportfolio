@@ -16,7 +16,7 @@ function Works() {
             <div className="project">
                 {/* PINNED PROJECTS -> */}
                 {worksJSON.map((work) => (
-                    <div className="project-container">
+                    <div className="project-container" key={work.title}>
                         <h1 className="project-container-header">
                             {work.title}
                         </h1>
@@ -24,7 +24,7 @@ function Works() {
                 ))}
                 {/* CURRENT -> PAST -> FUTURE OR DATA SCIENCE -> WEBDEV -> OTHER*/}
                 {worksJSON.map((work) => (
-                    <div className="project-container">
+                    <div className="project-container" key={work.title}>
                         <h1 className="project-container-header">
                             {work.title}
                         </h1>
