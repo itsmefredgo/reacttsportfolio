@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { TbArrowBigRightLines, TbArrowBigLeftLines } from 'react-icons/tb'
 import { RxDotFilled } from 'react-icons/rx'
 
-function projects() {
+function Projects() {
 
     interface Work {
         title: string;
@@ -88,7 +88,7 @@ function projects() {
             </div>
             <div className='main-projects-numbers'>
                 {pinnedWorks.map(function(work, index){
-                    return (<RxDotFilled className={currentWorkIndex == index ? 'main-projects-list-current-dot' : ''}/>)
+                    return (<RxDotFilled key={work.title} className={currentWorkIndex == index ? 'main-projects-list-current-dot' : ''}/>)
                 })}
             </div>
             <div className="main-projects-link">
@@ -100,4 +100,4 @@ function projects() {
     )  
 }
 
-export default projects;
+export default Projects;
