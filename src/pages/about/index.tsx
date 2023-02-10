@@ -1,5 +1,7 @@
-import Test from "../../components/about/test";
-import Hello from "../../components/about/hello";
+import Courses from "<redux>/components/about/courses";
+import AboutMe from "<redux>/components/about/about";
+import Language from "<redux>/components/about/language";
+import Timeline from "<redux>/components/about/timeline";
 import { useDispatch } from "react-redux";
 import { changeCurrentPage } from '../../assets/slices/pageSlice'
 
@@ -10,8 +12,10 @@ function About() {
     return (
 		<div className="about">
 			About Page
-			<Hello></Hello>
-			<Test></Test>
+			<AboutMe></AboutMe>
+			<Timeline></Timeline>
+			<Language></Language>
+			<Courses></Courses>
 		</div>
   	)
 }
