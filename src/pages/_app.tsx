@@ -37,7 +37,7 @@ function App({ Component, pageProps }: AppProps) {
     useEffect(() => {
         const userSetPreference = getUserSetPreference();
         if (userSetPreference) {setTheme(userSetPreference)}
-    }, [])
+    })
     
     return (
         <Provider store={store}>

@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 
 import IntroductionParagraphKorean from '../bilingual/home/introduction-paragraph-korean';
 import IntroductionParagraphEnglish from '../bilingual/home/introduction-paragraph-english';
+import Image from 'next/image';
 
 function Introduction() {
     const currentLanguage:string = useSelector((state: RootState) => state.languageChanger.currentLanguage)
@@ -14,7 +15,7 @@ function Introduction() {
         <div className="main-introduction">
             <div className="main-introduction-left">
                 <div className="main-introduction-photo">
-                    <img className="main-introduction-photo-item" src={frederick_snow_1.src} alt="Frederick Go"></img>
+                    <Image className="main-introduction-photo-item" src={frederick_snow_1.src} alt="Frederick Go" layout={'fill'} objectFit={'contain'}></Image>
                 </div>
                 <div className="main-introduction-photo-bg"></div>
             </div>

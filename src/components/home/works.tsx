@@ -57,13 +57,13 @@ function Projects() {
             <div className='main-projects-slide'>
                 <div className="main-projects-button-parent">
                     <div className={leftArrowClicked == false ? 'main-projects-slide-button' : 'main-projects-slide-button rightclicked'} onClick={() => prevWork()}>
-                        <TbArrowBigLeftLines/>
+                        <TbArrowBigLeftLines className="main-projects-button-parent-but"/>
                     </div>
                 </div>
                 <div className="main-projects-list">
                     {pinnedWorks.map(function(work, index) {
                             return (
-                                <div className={currentWorkIndex == index ? 'project-boxs pb-animation-active' : 'project-boxs pb-animation-non'} key={work.title} style={{height: "20vh"}}>
+                                <div className={currentWorkIndex == index ? 'project-boxs pb-animation-active' : 'project-boxs pb-animation-non'} key={work.title}>
                                     <h3>{work.title}</h3>
                                     <p>{work.description}</p>
                                     <div className='project-tech-list'>
@@ -82,13 +82,13 @@ function Projects() {
                 </div>
                 <div className="main-projects-button-parent">
                     <div className={rightArrowClicked == false ? 'main-projects-slide-button' : 'main-projects-slide-button leftclicked'} onClick={() => nextWork()}>
-                        <TbArrowBigRightLines/>
+                        <TbArrowBigRightLines className="main-projects-button-parent-but"/>
                     </div>
                 </div>
             </div>
             <div className='main-projects-numbers'>
                 {pinnedWorks.map(function(work, index){
-                    return (<RxDotFilled key={work.title} className={currentWorkIndex == index ? 'main-projects-list-current-dot' : ''}/>)
+                    return (<RxDotFilled key={work.title} className={currentWorkIndex == index ? 'main-projects-list-current-dot ' : ''}/>)
                 })}
             </div>
             <div className="main-projects-link">
